@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="https://robohash.org/personae gratae">
+  <title>Personae Gratae</title>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://rawgit.com/patternfly/patternfly/master-dist/dist/js/patternfly.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Patternfly nav -->
+  <nav class="navbar navbar-default navbar-pf" role="navigation">
+    <!-- <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="/assets/img/brand.svg" alt="Patternfly Demo App" />
+      </a>
+    </div> -->
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <!-- <ul class="nav navbar-nav navbar-utility">
+        <li>
+          <a href="#">Status</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="pficon pficon-user"></span>
+            Brian Johnson
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">Settings</a>
+            </li>
+            <li>
+              <a href="#">Another link</a>
+            </li>
+            <li>
+              <a href="#">Something else here</a>
+            </li>
+            <li class="divider"></li>
+            <li class="dropdown-submenu">
+              <a tabindex="-1" href="#">More options</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#">Link</a>
+                </li>
+                <li>
+                  <a href="#">Another link</a>
+                </li>
+                <li>
+                  <a href="#">Something else here</a>
+                </li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li>
+                  <a href="#">Separated link</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="#">One more separated link</a>
+                </li>
+              </ul>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="login.html">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul> -->
+      <ul class="nav navbar-nav navbar-primary">
+        <!-- {{#each navItems}}
+          <li {{#if this.active}}class="active"{{/if}}>
+            <a href="{{this.path}}">{{this.name}}</a>
+          </li>
+        {{/each}} -->
+        <li><a href="/">Personae Gratae</a></li>
+        <button onclick="location.href='/create'" class="btn btn-primary pull-right" style="margin-right: 16px; margin-top: 6px" type="button">Add Persona</button>
+      </ul>
+
+
+    </div>
+  </nav>
+
+  <div>
+    {{{body}}}
+  </div>
+
+
+</body>
+
+</html>

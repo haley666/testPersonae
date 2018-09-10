@@ -1,0 +1,230 @@
+// Create any partial less files you want and import them here or just import patternfly styles and add your less after
+//import patternfly LESS variables into your project
+// @import "../node_modules/patternfly/dist/less/patternfly.less";
+// @import "../node_modules/patternfly/dist/less/patternfly-additions.less";
+
+@import '../node_modules/patternfly/dist/less/patternfly.less';
+@import '../node_modules/patternfly/dist/less/patternfly-additions.less';
+
+img {
+  max-width: 100%;
+}
+.list-view-pf-left img {
+  max-width: 2em;
+}
+.breadcrumb {
+  background-color: inherit;
+}
+
+.pg-persona {
+  display:grid;
+  grid-template-columns: 280px auto;
+  grid-auto-rows: auto;
+  grid-template-areas:  "names names "
+                  "basic advance ";
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  // > * {
+  //     background-color: @color-pf-black-100;
+  // }
+}
+
+// @media (min-width: 800px) {
+//   .pg-persona {
+//     display:grid;
+//     grid-template-columns: 280px auto;
+//     grid-template:  "names names "
+//                     "basic advance ";
+//     grid-column-gap: 8px;
+//     grid-row-gap: 8px;
+//     > * {
+//         background-color: @color-pf-black-150;
+//     }
+//   }
+// }
+
+.pg-basic {
+  grid-area: basic;
+  display: grid;
+  // grid-template:  "id " 280px
+  //                 "backgrounds " auto;
+  grid-template-columns: repeat(1, 280px);
+  grid-template-rows: minmax(auto, max-content) auto;
+  grid-row-gap: 8px;
+  > * {
+      background-color: @color-pf-black-100;
+  }
+}
+
+.pg-basic > div:nth-child(2) {
+  padding: 10px;
+}
+
+.pg-advance {
+  grid-area: advance;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 8px;
+  > * {
+      background-color: @color-pf-black-100;
+      padding: 10px;
+  }
+}
+
+.pg-advance > div:nth-child(1) {
+  grid-column: span 2;
+}
+
+.pg-persona--card {
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 8px;
+
+  h3 {
+    font-size: 1em;
+    font-color: @color-pf-black-300;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  // border: 1px solid @color-pf-black-300;
+}
+
+.pg-persona--card > div {
+  background-color: @color-pf-black-100;
+  border: 1px solid @color-pf-black-300;
+  padding: 10px;
+}
+
+.pg-persona--card > div:nth-child(1) {
+  grid-column: span 2;
+}
+
+.pg-persona--card > div:nth-child(2) {
+  grid-column: span 2;
+}
+
+.pg-persona--card > div:nth-child(3) {
+  grid-column: span 2;
+}
+
+.pg-persona--card > div:nth-child(4) {
+  grid-column: span 2;
+}
+
+.pg-persona--card > div:nth-child(5) {
+  grid-column: span 2;
+}
+
+.pg-persona--card > div:nth-child(6) {
+  grid-column: span 2;
+}
+
+.pg-title {
+  align-self: end;
+  background-color: inherit;
+}
+.pg-title--card {
+  font-size: 1em;
+}
+
+.pg-title--roles {
+  grid-area: roles-title;
+}
+.pg-title--quote {
+  grid-area: quote-title;
+}
+.pg-title--backgrounds {
+  grid-area: backgrounds-title;
+}
+.pg-title--skills {
+  grid-area: skills-title;
+}
+.pg-title--success {
+  grid-area: success-title;
+}
+.pg-title--dangers {
+  grid-area: dangers-title;
+}
+.pg-title--id {
+  grid-area: id-title;
+}
+.pg-title--day {
+  grid-area: day-title;
+}
+.pg-title--network {
+  grid-area: network-title;
+}
+/*
+.pg-roles {
+  grid-area: roles;
+}*/
+
+.pg-names {
+  grid-area: names;
+  background-color: @color-pf-black-100;
+  padding: 10px;
+}
+.pg-quote {
+  grid-area: quote;
+}
+.pg-backgrounds {
+  grid-area: backgrounds;
+}
+.pg-skills {
+  grid-area: skills;
+}
+.pg-successes {
+  grid-area: success;
+}
+.pg-dangers {
+  grid-area: dangers;
+}
+.pg-id {
+  grid-area: id;
+}
+.pg-day {
+  grid-area: day;
+}
+.pg-network {
+  grid-area: network;
+}
+
+.pg-id--card {
+  align-items: center;
+}
+
+.pg-id__avatar {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.pg-id__avatar img {
+  width: 150px;
+}
+
+.pg-id--details img {
+  width: 280px;
+}
+
+.pg-quote--card {
+  display: inline-block;
+  margin-left: 20px;
+  width: 60%;
+  vertical-align: middle;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.visible {
+  display: none;
+}
+
+.large-margin {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}

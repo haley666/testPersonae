@@ -1,0 +1,145 @@
+{{!-- Maybe add horizontal nav and breadcrumbs here --}}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- <ol class="breadcrumb pull-left">
+        <li>
+          <a href="/">Back to Persona List</a>
+        </li>
+        <li class="active">
+          <strong>Persona Details:
+            <b>{{ persona.name }}</b>
+          </strong>
+        </li>
+      </ol> -->
+      <!-- <h3 class="pull-left">Persona Details</h3> -->
+      <p class="pull-right">
+        <button onclick="location.href='/persona/{{persona._id}}/card'" class="btn btn-default large-margin" type="button">Change to Card View</button>
+        <button onclick="location.href='/persona/{{persona._id}}/edit'" class="btn btn-default large-margin" type="button">
+          <i class="pficon pficon-edit"></i>
+          Edit
+        </button>
+      </p>
+    </div>
+  </div>
+  <!-- breadcrumb row -->
+
+  <div class="row">
+    <div class="col-xs-12">
+
+      <div class="pg-persona">
+
+        <div class="pg-names">
+          <h4 class="pull-left">{{persona.name}}</h4>
+          <h4 class="pull-right" style="font-weight: 400">{{persona.jobTitle}}</h4>
+        </div>
+
+        <div class="pg-basic">
+          <div class="pg-id--details">
+            <!-- <img src="https://robohash.org/{{persona.name}}?bgset=any" alt="Picture of {{persona.name}}"> -->
+            <img src={{persona.photo}} alt="https://robohash.org/{{persona.name}}?bgset=any">
+          </div>
+          {{#if persona.backgrounds}}
+            <div>
+              <h4 class="title">Background</h4>
+              {{persona.backgrounds}}
+            </div>
+          {{/if}}
+        </div>
+
+
+        <div class="pg-advance">
+          {{#if persona.quote}}
+            <div>
+              "{{persona.quote}}"
+            </div>
+          {{/if}}
+
+          {{#if persona.keysToSuccess.[0]}}
+            <div>
+              <h4 class="title inline-block">Keys to Success</h4>
+              <ul>
+                {{#each persona.keysToSuccess}}
+                  {{#if this}}
+                    <li>{{this}}</li>
+                  {{/if}}
+                {{/each}}
+              </ul>
+            </div>
+          {{/if}}
+
+          {{#if persona.dangers.[0]}}
+            <div>
+              <h4 class="title">Dangers</h4>
+              <ul>
+                {{#each persona.dangers}}
+                  {{#if this}}
+                    <li>{{this}}</li>
+                  {{/if}}
+                {{/each}}
+              </ul>
+            </div>
+          {{/if}}
+
+          {{#if persona.skills.[0].name}}
+            <div>
+              <h4 class="title">Skills & Tools</h4>
+              <p class="help-block" style="margin-bottom: 10px">"1" represents low-level, "2" represents medium-level and "3" represents high-level.</p>
+              <ul>
+                {{#each persona.skills}}
+                  {{#if this.name}}
+                    <div class="pg-skill">
+                      <div class="pg-skill__title pg-skill__value">
+                        <li><b>{{this.name}}:</b> {{this.rating}}</li>
+                      </div>
+                    </div>
+                  {{/if}}
+                {{/each}}
+              </ul>
+            </div>
+          {{/if}}
+
+          {{#if persona.dayInTheLife.summary.[0]}}
+            <div>
+              <h4 class="title">A day in life</h4>
+              <ul>
+                {{#each persona.dayInTheLife.summary}}
+                  {{#if this}}
+                    <div class="pg-day__summary">
+                      <li>{{this}}</li>
+                    </div>
+                  {{/if}}
+                {{/each}}
+              </ul>
+              <!-- <div class="pg-day__chart">
+                <ul>
+                  {{#each persona.dayInTheLife.activities}}
+                  <li>{{this.name}} {{this.percentage}}</li>
+                  {{/each}}
+                </ul>
+              </div> -->
+            </div>
+          {{/if}}
+
+          {{#if persona.network.[0]}}
+            <div>
+              <h4 class="title">Networks</h4>
+              {{#each persona.network}}
+                {{#if this}}
+                  <li><b>persona with id:</b> {{this}}</li>
+                {{/if}}
+              {{/each}}
+            </div>
+          {{/if}}
+
+        </div>
+      </div>
+    </div>
+
+
+      <!-- col -->
+    </div>
+    <!-- row -->
+  </div>
+  <!-- container -->
