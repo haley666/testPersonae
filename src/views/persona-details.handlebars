@@ -48,92 +48,177 @@
           {{/if}}
         </div>
 
+        {{#if persona.quote}}
+          <div class="pg-advance-quote">
 
-        <div class="pg-advance">
-          {{#if persona.quote}}
             <div>
-              "{{persona.quote}}"
+              <div class="pg-quote">
+                "{{persona.quote}}"
+              </div>
             </div>
-          {{/if}}
 
-          {{#if persona.keysToSuccess.[0]}}
-            <div>
-              <h4 class="title inline-block">Keys to Success</h4>
-              <ul>
-                {{#each persona.keysToSuccess}}
-                  {{#if this}}
-                    <li>{{this}}</li>
-                  {{/if}}
-                {{/each}}
-              </ul>
-            </div>
-          {{/if}}
-
-          {{#if persona.dangers.[0]}}
-            <div>
-              <h4 class="title">Dangers</h4>
-              <ul>
-                {{#each persona.dangers}}
-                  {{#if this}}
-                    <li>{{this}}</li>
-                  {{/if}}
-                {{/each}}
-              </ul>
-            </div>
-          {{/if}}
-
-          {{#if persona.skills.[0].name}}
-            <div>
-              <h4 class="title">Skills & Tools</h4>
-              <p class="help-block" style="margin-bottom: 10px">"1" represents low-level, "2" represents medium-level and "3" represents high-level.</p>
-              <ul>
-                {{#each persona.skills}}
-                  {{#if this.name}}
-                    <div class="pg-skill">
-                      <div class="pg-skill__title pg-skill__value">
-                        <li><b>{{this.name}}:</b> {{this.rating}}</li>
-                      </div>
-                    </div>
-                  {{/if}}
-                {{/each}}
-              </ul>
-            </div>
-          {{/if}}
-
-          {{#if persona.dayInTheLife.summary.[0]}}
-            <div>
-              <h4 class="title">A day in life</h4>
-              <ul>
-                {{#each persona.dayInTheLife.summary}}
-                  {{#if this}}
-                    <div class="pg-day__summary">
-                      <li>{{this}}</li>
-                    </div>
-                  {{/if}}
-                {{/each}}
-              </ul>
-              <!-- <div class="pg-day__chart">
+            {{#if persona.keysToSuccess.[0]}}
+              <div>
+                <h4 class="title inline-block">Keys to Success</h4>
                 <ul>
-                  {{#each persona.dayInTheLife.activities}}
-                  <li>{{this.name}} {{this.percentage}}</li>
+                  {{#each persona.keysToSuccess}}
+                    {{#if this}}
+                      <li>{{this}}</li>
+                    {{/if}}
                   {{/each}}
                 </ul>
-              </div> -->
-            </div>
-          {{/if}}
+              </div>
+            {{/if}}
 
-          {{#if persona.network.[0]}}
-            <div>
-              <h4 class="title">Networks</h4>
-              {{#each persona.network}}
-                {{#if this}}
-                  <li><b>persona with id:</b> {{this}}</li>
-                {{/if}}
-              {{/each}}
-            </div>
-          {{/if}}
+            {{#if persona.dangers.[0]}}
+              <div>
+                <h4 class="title">Dangers</h4>
+                <ul>
+                  {{#each persona.dangers}}
+                    {{#if this}}
+                      <li>{{this}}</li>
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
+            {{/if}}
 
-        </div>
+            {{#if persona.skills.[0].name}}
+              <div>
+                <h4 class="title">Skills & Tools</h4>
+                <p class="help-block" style="margin-bottom: 10px">"1" represents low-level, "2" represents medium-level and "3" represents high-level.</p>
+                <ul>
+                  {{#each persona.skills}}
+                    {{#if this.name}}
+                      <div class="pg-skill">
+                        <div class="pg-skill__title pg-skill__value">
+                          <li><b>{{this.name}}:</b> {{this.rating}}</li>
+                        </div>
+                      </div>
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
+            {{/if}}
+
+            {{#if persona.dayInTheLife.summary.[0]}}
+              <div>
+                <h4 class="title">A day in life</h4>
+                <ul>
+                  {{#each persona.dayInTheLife.summary}}
+                    {{#if this}}
+                      <div class="pg-day__summary">
+                        <li>{{this}}</li>
+                      </div>
+                    {{/if}}
+                  {{/each}}
+                </ul>
+                <!-- <div class="pg-day__chart">
+                  <ul>
+                    {{#each persona.dayInTheLife.activities}}
+                    <li>{{this.name}} {{this.percentage}}</li>
+                    {{/each}}
+                  </ul>
+                </div> -->
+              </div>
+            {{/if}}
+
+            {{#if persona.network.[0]}}
+              <div>
+                <h4 class="title">Networks</h4>
+                {{#each persona.network}}
+                  {{#if this}}
+                    <li><b>persona with id:</b> {{this}}</li>
+                  {{/if}}
+                {{/each}}
+              </div>
+            {{/if}}
+
+          </div>
+
+        {{else}}
+          <div class="pg-advance">
+
+            {{#if persona.keysToSuccess.[0]}}
+              <div>
+                <h4 class="title inline-block">Keys to Success</h4>
+                <ul>
+                  {{#each persona.keysToSuccess}}
+                    {{#if this}}
+                      <li>{{this}}</li>
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
+            {{/if}}
+
+            {{#if persona.dangers.[0]}}
+              <div>
+                <h4 class="title">Dangers</h4>
+                <ul>
+                  {{#each persona.dangers}}
+                    {{#if this}}
+                      <li>{{this}}</li>
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
+            {{/if}}
+
+            {{#if persona.skills.[0].name}}
+              <div>
+                <h4 class="title">Skills & Tools</h4>
+                <p class="help-block" style="margin-bottom: 10px">"1" represents low-level, "2" represents medium-level and "3" represents high-level.</p>
+                <ul>
+                  {{#each persona.skills}}
+                    {{#if this.name}}
+                      <div class="pg-skill">
+                        <div class="pg-skill__title pg-skill__value">
+                          <li><b>{{this.name}}:</b> {{this.rating}}</li>
+                        </div>
+                      </div>
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
+            {{/if}}
+
+            {{#if persona.dayInTheLife.summary.[0]}}
+              <div>
+                <h4 class="title">A day in life</h4>
+                <ul>
+                  {{#each persona.dayInTheLife.summary}}
+                    {{#if this}}
+                      <div class="pg-day__summary">
+                        <li>{{this}}</li>
+                      </div>
+                    {{/if}}
+                  {{/each}}
+                </ul>
+                <!-- <div class="pg-day__chart">
+                  <ul>
+                    {{#each persona.dayInTheLife.activities}}
+                    <li>{{this.name}} {{this.percentage}}</li>
+                    {{/each}}
+                  </ul>
+                </div> -->
+              </div>
+            {{/if}}
+
+            {{#if persona.network.[0]}}
+              <div>
+                <h4 class="title">Networks</h4>
+                {{#each persona.network}}
+                  {{#if this}}
+                    <li><b>persona with id:</b> {{this}}</li>
+                  {{/if}}
+                {{/each}}
+              </div>
+            {{/if}}
+          </div>
+        {{/if}}
+
+
       </div>
     </div>
 
