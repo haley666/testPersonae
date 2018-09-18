@@ -241,24 +241,17 @@ app.post('/persona/:id/edit', upload.single('photo'), function(req, res){
 app.get('/persona/:id/delete', function(req, res){
   // TODO retrieve persona from mongodb
   var id = new mongodb.ObjectID(req.params.id);
-  db.collection('personas').find({ _id: id }).toArray(function(err, result){
-    if(err) throw err;
-    if(result.length > 0){
-      res.render('delete-persona', {persona: result[0], navItems});
-    } else {
-      res.render('404');
-    }
-  });
-  variableD = id;
-})
-
-app.post('/persona/:id/delete', function(req, res){
-  db.collection('personas').deleteOne({ _id: variableD }, function(err, res){
+  db.collection('personas').deleteOne({ _id: id }, function(err, res){
     if (err) throw err;
+    console.log("*************ID: "+id+"has successfully been removed")
   });
-
-  res.redirect('/');
-});
+  db.collection('personas').find({}).toArray(function(err, result){
+    if (err) throw err;
+    personas = result;
+    console.log('All personas successfully loaded');
+    res.render('home', {personas: result, navItems});
+  });
+})
 //Delete End
 
 //error handling
