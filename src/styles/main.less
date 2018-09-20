@@ -60,7 +60,7 @@ img {
   padding: 10px;
 }
 
-.pg-advance {
+.pg-advance-quote {
   grid-area: advance;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -72,8 +72,20 @@ img {
   }
 }
 
-.pg-advance > div:nth-child(1) {
+.pg-advance-quote > div:nth-child(1) {
   grid-column: span 2;
+}
+
+.pg-advance {
+  grid-area: advance;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 8px;
+  > * {
+      background-color: @color-pf-black-100;
+      padding: 10px;
+  }
 }
 
 .pg-persona--card {
