@@ -141,7 +141,7 @@ app.post('/create', upload.single('photo'), function(req, res){
   persona.network = req.body.quote;
   console.log(req.body.quote);
   if(!req.file) {
-    persona.photo = '/opt/app-root/src/data/avatars/default.png';
+    persona.photo = '/avatars/default.png';
   }
   else {
     persona.photo = '/avatars/' + req.file.filename;
